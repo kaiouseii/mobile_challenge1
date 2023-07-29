@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_challenge1/modules/home/views/home_screen/widgets/category_card.dart';
-import 'package:mobile_challenge1/modules/home/views/home_screen/widgets/video_item.dart';
+import 'package:mobile_challenge1/modules/home/controllers/home_controller.dart';
+import 'package:provider/provider.dart';
 
 class TrailerCategory extends StatelessWidget {
   const TrailerCategory({
@@ -9,14 +9,10 @@ class TrailerCategory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomeController homeController = Provider.of<HomeController>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        CategoryCard(text: "Trailers"),
-        VideoItem(url: "assets/images/video_2.jpg"),
-        VideoItem(url: "assets/images/video_3.jpg"),
-        VideoItem(url: "assets/images/video_4.jpg"),
-      ],
+      children: homeController.listofVideos,
     );
   }
 }

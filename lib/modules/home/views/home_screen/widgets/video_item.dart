@@ -4,9 +4,11 @@ class VideoItem extends StatelessWidget {
   const VideoItem({
     super.key,
     required this.url,
+    required this.category,
   });
 
   final String url;
+  final String category;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +16,8 @@ class VideoItem extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(4)),
-        child: Image.asset(
+        child: Image.network(
           url,
-          fit: BoxFit.fitWidth,
         ),
       ),
     );

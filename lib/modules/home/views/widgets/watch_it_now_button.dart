@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:mobile_challenge1/modules/home/controllers/home_controller.dart';
+import 'package:provider/provider.dart';
 
 class WatchItNowButton extends StatelessWidget {
   const WatchItNowButton({
@@ -10,9 +11,10 @@ class WatchItNowButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomeController homeController = Provider.of<HomeController>(context);
     return ElevatedButton(
       onPressed: () {
-        _launchURL();
+        homeController.launchURL(videoUrl);
       },
       child: Text(
         "Assista Agora",
@@ -22,13 +24,5 @@ class WatchItNowButton extends StatelessWidget {
             .copyWith(fontWeight: FontWeight.bold),
       ),
     );
-  }
-
-  void _launchURL() async {
-    if (await canLaunchUrl(videoUrl)) {
-      await launchUrl(videoUrl);
-    } else {
-      throw 'Could not launch $videoUrl';
-    }
   }
 }

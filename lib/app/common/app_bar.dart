@@ -4,7 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 AppBar appBar() {
   return AppBar(
     title: Text(
-      "MOBFLIXA",
+      "MOBFLIX",
       style: Theme.of(Modular.routerDelegate.navigatorKey.currentContext!)
           .textTheme
           .headlineMedium!

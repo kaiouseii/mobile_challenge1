@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobile_challenge1/modules/home/controllers/home_controller.dart';
-import 'package:provider/provider.dart';
 
 class CategoryDropdownButton extends StatelessWidget {
   const CategoryDropdownButton({
@@ -9,7 +9,7 @@ class CategoryDropdownButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeController homeController = Provider.of<HomeController>(context);
+    HomeController homeController = context.watch<HomeController>();
     return DropdownButton(
       items: const [
         DropdownMenuItem(

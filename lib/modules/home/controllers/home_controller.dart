@@ -15,6 +15,12 @@ class HomeController extends ChangeNotifier {
 
   List<VideoItem> get listofVideos => _listOfVideos;
 
+  clearAll(){
+    _dropdownButtonValue = "";
+    _urlImage = "";
+    notifyListeners();
+  }
+
   addVideo(VideoItem videoItem) {
     _listOfVideos.add(videoItem);
     notifyListeners();

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_challenge1/modules/home/views/widgets/watch_it_now_button.dart';
-
+import 'package:mobile_challenge1/modules/home/views/home_screen/widgets/watch_it_now_button.dart';
 class MainVideo extends StatelessWidget {
   const MainVideo({
     super.key,

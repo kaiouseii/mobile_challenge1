@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_challenge1/modules/home/views/widgets/category_card.dart';
+import 'package:mobile_challenge1/modules/home/views/home_screen/widgets/category_card.dart';
 
 class RowOfCategories extends StatelessWidget {
   const RowOfCategories({

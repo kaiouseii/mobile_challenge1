@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_challenge1/modules/home/views/widgets/category_card.dart';
-import 'package:mobile_challenge1/modules/home/views/widgets/video_item.dart';
+import 'package:mobile_challenge1/modules/home/views/home_screen/widgets/category_card.dart';
+import 'package:mobile_challenge1/modules/home/views/home_screen/widgets/video_item.dart';
 
 class TrailerCategory extends StatelessWidget {
   const TrailerCategory({

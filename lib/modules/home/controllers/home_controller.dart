@@ -5,26 +5,20 @@ import 'package:url_launcher/url_launcher.dart';
 class HomeController extends ChangeNotifier {
   String _dropdownButtonValue = "";
   String _urlImage = "";
+  int _alterIndex = 0;
   String get dropdownButtonValue => _dropdownButtonValue;
   String get urlImage => _urlImage;
+  int get alterIndex => _alterIndex;
   final List<VideoItem> _listOfVideos = [
     const VideoItem(
-        url: "https://i.ytimg.com/vi/otutSrxYpa4/maxresdefault.jpg",
-        category: "Trailers")
+      url:
+          "https://www.youtube.com/watch?v=PKAqMSb2qGw&ab_channel=NetflixBrasil",
+      category: "Trailers",
+      index: 0,
+    )
   ];
 
   List<VideoItem> get listofVideos => _listOfVideos;
-
-  clearAll(){
-    _dropdownButtonValue = "";
-    _urlImage = "";
-    notifyListeners();
-  }
-
-  addVideo(VideoItem videoItem) {
-    _listOfVideos.add(videoItem);
-    notifyListeners();
-  }
 
   set dropdownButtonValue(String value) {
     _dropdownButtonValue = value;
@@ -33,6 +27,35 @@ class HomeController extends ChangeNotifier {
 
   set urlImage(String value) {
     _urlImage = value;
+    notifyListeners();
+  }
+
+    getAlterInfo(String dropdownButtonValueReceived, String urlImageReceived, int alterIndexReceived) {
+    _dropdownButtonValue = dropdownButtonValueReceived;
+    _urlImage = urlImageReceived;
+    _alterIndex = alterIndexReceived;
+    notifyListeners();
+  }
+
+  clearAll() {
+    _dropdownButtonValue = "";
+    _urlImage = "";
+    _alterIndex = 0;
+    notifyListeners();
+  }
+
+  addVideo(VideoItem videoItem) {
+    _listOfVideos.add(videoItem);
+    notifyListeners();
+  }
+
+  updateVideo(VideoItem videoItem, int index) {
+    _listOfVideos[index] = videoItem;
+    notifyListeners();
+  }
+
+  deleteVideo(int index) {
+    _listOfVideos.removeAt(index);
     notifyListeners();
   }
 

@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:mobile_challenge1/modules/home/controllers/home_controller.dart';
 
 class PreviewScreen extends StatelessWidget {
   const PreviewScreen({
     super.key,
+    required this.urlForThumb,
   });
-
+final String urlForThumb;
   @override
   Widget build(BuildContext context) {
-    HomeController homeController = context.watch<HomeController>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -18,7 +16,7 @@ class PreviewScreen extends StatelessWidget {
           child: Text("Preview"),
         ),
         Image.network(
-          homeController.urlImage,
+          urlForThumb,
           errorBuilder: (context, error, stackTrace) {
             return Image.asset("assets/images/preview.png");
           },

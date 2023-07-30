@@ -13,7 +13,7 @@ class CategoryDropdownButton extends StatelessWidget {
     return DropdownButton(
       items: const [
         DropdownMenuItem(
-          value: "Trailer",
+          value: "Trailers",
           child: Text("Trailer"),
         ),
         DropdownMenuItem(
@@ -32,8 +32,8 @@ class CategoryDropdownButton extends StatelessWidget {
       isExpanded: true,
       hint: const Text("Selecione uma categoria"),
       value: homeController.dropdownButtonValue == ""
-          ? null
-          : homeController.dropdownButtonValue,
+                  ? null
+                  : homeController.dropdownButtonValue,
       onChanged: (value) {
         homeController.dropdownButtonValue = value!;
       },

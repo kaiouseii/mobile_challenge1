@@ -7,7 +7,7 @@ class InputTextField extends StatelessWidget {
   const InputTextField({
     super.key,
     this.hintText = "ex: https://www.youtube.com/djopAKDIPSJA",
-    this.labelText = "Url do vídeo no youtube"
+    this.labelText = "Url do vídeo no youtube",
   });
 
   final String hintText, labelText;

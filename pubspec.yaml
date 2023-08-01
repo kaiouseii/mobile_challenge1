@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter_modular: ^5.0.3
   url_launcher: ^6.1.11
+  sqflite: ^2.2.8
+  path: ^1.8.2
+  logger: ^2.0.1
   flutter:
     sdk: flutter
 

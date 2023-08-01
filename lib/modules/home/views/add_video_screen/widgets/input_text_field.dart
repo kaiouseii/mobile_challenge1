@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:mobile_challenge1/app/common/get_youtube_thumbnail.dart';
 import 'package:mobile_challenge1/modules/home/controllers/home_controller.dart';
 
 class InputTextField extends StatelessWidget {
@@ -20,8 +19,9 @@ class InputTextField extends StatelessWidget {
       children: [
         Text(labelText),
         TextField(
+          controller: TextEditingController(text: homeController.urlImage),
           onChanged: (value) {
-            homeController.urlImage = getYoutubeThumbnail(value);
+            homeController.urlImage = value;
           },
           decoration: InputDecoration(
             hintText: hintText,

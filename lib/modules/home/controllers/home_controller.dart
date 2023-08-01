@@ -9,14 +9,7 @@ class HomeController extends ChangeNotifier {
   String get dropdownButtonValue => _dropdownButtonValue;
   String get urlImage => _urlImage;
   int get alterIndex => _alterIndex;
-  final List<VideoItem> _listOfVideos = [
-    const VideoItem(
-      url:
-          "https://www.youtube.com/watch?v=PKAqMSb2qGw&ab_channel=NetflixBrasil",
-      category: "Trailers",
-      index: 0,
-    )
-  ];
+  final List<VideoItem> _listOfVideos = [];
 
   List<VideoItem> get listofVideos => _listOfVideos;
 
@@ -30,7 +23,8 @@ class HomeController extends ChangeNotifier {
     notifyListeners();
   }
 
-    getAlterInfo(String dropdownButtonValueReceived, String urlImageReceived, int alterIndexReceived) {
+  getAlterInfo(String dropdownButtonValueReceived, String urlImageReceived,
+      int alterIndexReceived) {
     _dropdownButtonValue = dropdownButtonValueReceived;
     _urlImage = urlImageReceived;
     _alterIndex = alterIndexReceived;
@@ -54,8 +48,11 @@ class HomeController extends ChangeNotifier {
     notifyListeners();
   }
 
-  deleteVideo(int index) {
-    _listOfVideos.removeAt(index);
+  deleteVideo(VideoItem videoItem) {
+    _listOfVideos.removeWhere((element) =>
+        element.url == videoItem.url &&
+        element.index == videoItem.index &&
+        element.category == videoItem.category);
     notifyListeners();
   }
 
